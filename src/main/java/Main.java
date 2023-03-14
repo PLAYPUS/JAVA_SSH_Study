@@ -38,6 +38,7 @@ public class Main {
                 System.out.println("executing: " + query.getQueryString());
                 for (Object o : query.list()) {
                     System.out.println("  " + o);
+                    System.out.println();
                 }
             }
         } finally {
