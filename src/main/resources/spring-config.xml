@@ -57,12 +57,22 @@
         <property name="userDao" ref="userDao"></property>
         <property name="service" ref="service"></property>
     </bean>
-    <bean id="addAction" class="hb.rj.action.AddAction"></bean>
+    <!--addAction请求，用来打开Add.jsp页面-->
+    <bean id="addAction" class="hb.rj.action.AddAction" scope="prototype"/>
+    <!--addUser请求(添加用户)-->
+    <bean id="addUserAction" class="hb.rj.action.AddUserAction" scope="prototype">
+        <property name="user" ref="user"/>
+        <property name="userDao" ref="userDao"/>
+        <property name="service" ref="service"/>
+    </bean>
 
+    <!--modifyByIdAction请求(打开修改用户页面使用的请求)-->
+    <bean id="modifyByIdAction" class="hb.rj.action.ModifyByIdAction" scope="prototype">
+        <property name="user" ref="user" />
+        <property name="userDao" ref="userDao"/>
+    </bean>
+    <bean id="modifyUserAction" class="hb.rj.action.ModifyUserAction">
 
-    <bean id="modifyByIdAction" class="hb.rj.action.ModifyByIdAction">
-            <property name="user" ref="user"></property>
-            <property name="userDao" ref="userDao"></property>
     </bean>
     <bean id="deleteByIdAction" class="hb.rj.action.DeleteByIdAction">
 
