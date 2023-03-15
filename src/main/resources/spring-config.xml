@@ -72,7 +72,8 @@
         <property name="userDao" ref="userDao"/>
     </bean>
     <bean id="modifyUserAction" class="hb.rj.action.ModifyUserAction">
-
+        <property name="user" ref="user" />
+        <property name="userDao" ref="userDao"/>
     </bean>
     <bean id="deleteByIdAction" class="hb.rj.action.DeleteByIdAction">
 

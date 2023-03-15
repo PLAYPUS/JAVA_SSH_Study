@@ -25,7 +25,7 @@
         </action>
 
         <action name="modifyById" class="modifyByIdAction">
-            <result name="success">Modify.action</result>
+            <result name="success">Modify.jsp</result>
         </action>
         <action name="modifyUser" class="modifyUserAction">
 
