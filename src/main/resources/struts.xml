@@ -10,5 +10,20 @@
             <result name="success">list.jsp</result>
             <result name="error">Err1.jsp</result>
         </action>
+        <action name="list" class="listAction">
+            <result name="success">list.jsp</result>
+<!--            <result name="error">Err1.jsp</result>-->
+        </action>
+        <action name="add" class="addAction">
+            <result name="success" type="redirect">
+                <param name="loaction">list.action</param>
+                <param name="CurrentPage">${pageNum}</param>
+            </result>
+        </action>
+
+        <action name="modifyById" class="modfiybyIdAction">
+            <result name="success">Modify.action</result>
+
+        </action>
     </package>
 </struts>

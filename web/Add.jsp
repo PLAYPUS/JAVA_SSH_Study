@@ -33,9 +33,9 @@
               <h3>新增用户</h3>
               <form  method="post"  action="/add">
                    <label>用户名称：</label>
-                   <input class="form-control" type="text" id="name" name="name">
+                   <input class="form-control" type="text" id="userName" name="name">
                    <label>密码：</label>
-                   <input class="form-control" type="password" id="pwd" name="pwd">
+                   <input class="form-control" type="password" id="" name="pwd">
                    <label>再次输入密码：</label>
                    <input class="form-control" type="password" id="pwd1" name="pwd1">
                    <label>部  门：</label>

@@ -57,9 +57,9 @@ User: szkj
                                     <H4 style="color:white;margin-bottom: 0px">当前用户:${LoginUser}</H4>
                               </td>
                               <td style="vertical-align: bottom;border: 0px;text-align: right">
-                                    <form action="list" method="post" style="margin: 0px" class="form-inline">
+                                    <form action="list.action" method="post" style="margin: 0px" class="form-inline">
                                           <H4 style="color: white;display: inline">按：</H4>
-                                          <select class="form-control" name="conIndex"  id="select1">
+                                          <select class="form-control" name="conIndex"  id="conIndex">
                                                   <option value="0">全部</option>
                                                   <option value="1">id号</option>
                                                   <option value="2">用户名</option>
@@ -121,14 +121,14 @@ User: szkj
             if (CurrentPage==0){  //如果前面没有页码了，那改为第1页
                 CurrentPage=1;
             }
-            window.location.href="list?CurrentPage="+CurrentPage;//将要显示的页码传入名为list的Servlet中
+            window.location.href="list.action?CurrentPage="+CurrentPage;//将要显示的页码传入名为list的Servlet中
         }
         function Npage(pageNum) { //后翻一页
             let  CurrentPage=pageNum+1;
             if (CurrentPage>${page.pageCount}){ //如果当前页加一后大于总页数，说明当前页是最后一页。
                 CurrentPage=${page.pageCount}
             }
-            window.location.href="list?CurrentPage="+CurrentPage;//将要显示的页码传入名为list的Servlet中
+            window.location.href="list.action?CurrentPage="+CurrentPage;//将要显示的页码传入名为list的Servlet中
         }
 </script>
 </html>

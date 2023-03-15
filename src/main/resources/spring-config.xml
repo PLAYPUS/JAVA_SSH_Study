@@ -29,7 +29,7 @@
                 <prop key="hibernate.dialect">
                     org.hibernate.dialect.MySQL8Dialect
                 </prop>
-                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.show_sql">false</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
                 <prop
@@ -51,5 +51,16 @@
     <bean id="loginAction" class="hb.rj.action.LoginAction" scope="prototype">
         <property name="userDao" ref="userDao"/>
         <property name="service" ref="service"/>
+    </bean>
+
+    <bean id="listAction" class="hb.rj.action.ListAction">
+        <property name="userDao" ref="userDao"></property>
+        <property name="service" ref="service"></property>
+    </bean>
+    <bean id="addAction" class="hb.rj.action.AddAction"></bean>
+
+
+    <bean id="modifyIdAction" class="hb.rj.action.ModifyByIdAction">
+
     </bean>
 </beans>

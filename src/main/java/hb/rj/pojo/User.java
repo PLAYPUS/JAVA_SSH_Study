@@ -99,4 +99,18 @@ public class User {
     public int hashCode() {
         return Objects.hash(id, userName, passWord, dept, createUser, createDate, remark);
     }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", passWord='" + passWord + '\'' +
+                ", dept='" + dept + '\'' +
+                ", createUser='" + createUser + '\'' +
+                ", createDate=" + createDate +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
 }
