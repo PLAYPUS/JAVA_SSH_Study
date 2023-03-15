@@ -113,7 +113,7 @@ User: szkj
         })
         //退出系统
         $("#button2").click(function () {
-            location.href="/logOut"
+            location.href="logout.action"
         })
         //原生javascript写法
         function Fpage(pageNum) { //前翻一页

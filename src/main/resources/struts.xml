@@ -18,6 +18,10 @@
             <result name="success">Add.jsp</result>
         </action>
 
+        <action name="addUser" class="addUserAction">
+
+        </action>
+
         <action name="modifyById" class="modifyByIdAction">
             <result name="success">Modify.action</result>
         </action>

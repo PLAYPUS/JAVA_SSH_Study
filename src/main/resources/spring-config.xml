@@ -78,7 +78,7 @@
 
     </bean>
 
-    <bean id="logOutAction" class="hb.rj.action.LoginOutAction">
+    <bean id="logOutAction" class="hb.rj.action.LogOutAction">
 
 
 

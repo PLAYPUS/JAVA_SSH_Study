@@ -5,7 +5,7 @@ import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class LoginOutAction extends ActionSupport {
+public class LogOutAction extends ActionSupport {
     @Override
     public String execute() throws Exception {
         //获取request对象
