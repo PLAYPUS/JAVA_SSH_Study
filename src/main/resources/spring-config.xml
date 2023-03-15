@@ -77,4 +77,10 @@
     <bean id="deleteByIdAction" class="hb.rj.action.DeleteByIdAction">
 
     </bean>
+
+    <bean id="logOutAction" class="hb.rj.action.LoginOutAction">
+
+
+
+    </bean>
 </beans>

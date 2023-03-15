@@ -15,10 +15,7 @@
 <!--            <result name="error">Err1.jsp</result>-->
         </action>
         <action name="add" class="addAction">
-            <result name="success" type="redirect">
-                <param name="loaction">list.action</param>
-                <param name="CurrentPage">${pageNum}</param>
-            </result>
+            <result name="success">Add.jsp</result>
         </action>
 
         <action name="modifyById" class="modifyByIdAction">
@@ -28,8 +25,13 @@
 
         </action>
         <action name="deleteById" class="deleteByIdAction">
-            <result name="success"></result>
-
+            <result name ="success" type="redirect">
+                <param name="location">list.action</param>
+                <param name="CurrentPage">${pageNum}</param>
+            </result>
+        </action>
+        <action name="logOut" class="logOutAction">
+            <result name="success">index.jsp</result>
         </action>
     </package>
 </struts>
