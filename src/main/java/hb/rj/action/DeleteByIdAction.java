@@ -12,9 +12,32 @@ import javax.servlet.http.HttpServletRequest;
 
 public class DeleteByIdAction extends ActionSupport implements ModelDriven<User> {
     private User user;
-    UserDao userDao;
+    private UserDao userDao;
     private int pageNum;
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public UserDao getUserDao() {
+        return userDao;
+    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
+    public int getPageNum() {
+        return pageNum;
+    }
+
+    public void setPageNum(int pageNum) {
+        this.pageNum = pageNum;
+    }
 
     @Override
     public User getModel() {

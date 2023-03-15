@@ -17,9 +17,11 @@
         <action name="add" class="addAction">
             <result name="success">Add.jsp</result>
         </action>
-
         <action name="addUser" class="addUserAction">
-
+            <result name="success" type="redirect"> <!--重定向-->
+                <param name="location">list.action</param> <!--重定向到上面list.jsp页面 最后一页-->
+                <param name="CurrentPage">${pageNum}</param><!--请求中的参数 最后一页-->
+            </result>
         </action>
 
         <action name="modifyById" class="modifyByIdAction">

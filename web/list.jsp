@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
 User: szkj
@@ -12,7 +13,7 @@ User: szkj
 <head>
     <title>用户列表</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script type="application/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="application/javascript" src="js/bootstrap.js"></script>
 </head>
 <style>
@@ -59,7 +60,7 @@ User: szkj
                               <td style="vertical-align: bottom;border: 0px;text-align: right">
                                     <form action="list.action" method="post" style="margin: 0px" class="form-inline">
                                           <H4 style="color: white;display: inline">按：</H4>
-                                          <select class="form-control" name="conIndex"  id="conIndex">
+                                          <select class="form-control" name="conIndex"  id="select1">
                                                   <option value="0">全部</option>
                                                   <option value="1">id号</option>
                                                   <option value="2">用户名</option>
@@ -92,8 +93,8 @@ User: szkj
                                  <td>${user.createDate}</td>
                                  <td>${user.remark}</td>
                                  <td>
-                                      <a  href="/deleteById?id=${user.id}">删除</a>
-                                      <a  href="/selectById?id=${user.id}">修改</a>
+                                      <a  href="/deleteById.action?id=${user.id}">删除</a>
+                                      <a  href="/modifyById.action?id=${user.id}">修改</a>
                                  </td>
                          </tr>
                       </c:forEach>
@@ -109,11 +110,11 @@ User: szkj
 <script>
         //添加用户
         $("#button1").click(function () {
-            location.href="Add.jsp"
+            location.href="add.action"
         })
         //退出系统
         $("#button2").click(function () {
-            location.href="logout.action"
+            location.href="logOut.action"
         })
         //原生javascript写法
         function Fpage(pageNum) { //前翻一页

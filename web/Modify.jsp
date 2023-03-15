@@ -9,7 +9,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script type="application/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="application/javascript" src="js/bootstrap.js"></script>
     <title>修改用户</title>
     <style>
@@ -31,14 +31,14 @@
         %>
        <div style="width:50%; margin-left: 25%;margin-top: 5%">
             <h3>修改用户信息：</h3>
-            <form  method="post" action="modify">
+            <form  method="post" action="modifyUser.action">
                 <input type="hidden" name="id" value=${user.id}>
                 <label>用户名称：</label>
-                <input class="form-control" type="text" id="name" name="name" value=${user.userName}>
+                <input class="form-control" type="text" id="name" name="userName" value=${user.userName}>
                 <label>密码：</label>
-                <input class="form-control" type="password" id="pwd" name="pwd" value=${user.passWord}>
+                <input class="form-control" type="password" id="pwd" name="passWord" value=${user.passWord}>
                 <label>再次输入密码：</label>
-                <input class="form-control" type="password" id="pwd1" name="pwd1" value=${user.passWord}>
+                <input class="form-control" type="password" id="pwd1" name="passWord1" value=${user.passWord}>
                 <label>部门</label>
                 <select class="form-control" name="dept" id="dept">
                      <option value="IT部">IT部</option>
@@ -46,7 +46,7 @@
                      <option value="总经办">总经办</option>
                 </select>
                 <label>备注：</label>
-                <textarea  class="form-control" id="area" name="area" rows="3" resize="none">${user.remark}</textarea>
+                <textarea  class="form-control" id="area" name="remark" rows="3" resize="none">${user.remark}</textarea>
                 <div style="text-align: right; margin-top: 6px">
                     <button id="button1" class="btn btn-info">返回列表</button>
                     <button id="button2" class="btn btn-info">修改</button>
@@ -71,7 +71,7 @@
     <%-- 返回列表页--%>
     $("#button1").click(function () {
         cancelPost();
-        location.href = "/list"
+        location.href = "list.action"
     })
     <%-- 对要输入的数据进行校验 --%>
     $("#button2").click(function () {
@@ -109,7 +109,7 @@
     })
     $("#button3").click(function () {
         cancelPost();
-        location.href = "/logOut"
+        location.href = "logOut.action"
     })
 
 </script>

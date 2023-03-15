@@ -9,7 +9,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script type="application/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="application/javascript" src="js/bootstrap.js"></script>
     <title>添加用户</title>
     <style>
@@ -31,11 +31,11 @@
         %>
        <div style="width:50%; margin-left: 25%;margin-top: 5%">
               <h3>新增用户</h3>
-              <form  method="post"  action="add.action">
+              <form  method="post"  action="addUser.action">
                    <label>用户名称：</label>
-                   <input class="form-control" type="text" id="userName" name="name">
+                   <input class="form-control" type="text" id="name" name="name">
                    <label>密码：</label>
-                   <input class="form-control" type="password" id="" name="pwd">
+                   <input class="form-control" type="password" id="pwd" name="pwd">
                    <label>再次输入密码：</label>
                    <input class="form-control" type="password" id="pwd1" name="pwd1">
                    <label>部  门：</label>
@@ -63,7 +63,7 @@
         $("form").submit(function () {
             return false
         })
-        location.href="list.jsp"  //转到列表页
+        location.href="/list"  //转到列表页
     })
     //取消form提交
     function cancelPost() {

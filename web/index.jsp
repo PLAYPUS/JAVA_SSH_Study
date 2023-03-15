@@ -13,7 +13,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script type="application/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="application/javascript" src="js/bootstrap.js"></script>
     <title>用户登录:</title>
   </head>

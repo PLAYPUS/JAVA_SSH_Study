@@ -54,8 +54,8 @@
     </bean>
 
     <bean id="listAction" class="hb.rj.action.ListAction">
-        <property name="userDao" ref="userDao"></property>
-        <property name="service" ref="service"></property>
+        <property name="userDao" ref="userDao"/>
+        <property name="service" ref="service"/>
     </bean>
     <!--addAction请求，用来打开Add.jsp页面-->
     <bean id="addAction" class="hb.rj.action.AddAction" scope="prototype"/>
