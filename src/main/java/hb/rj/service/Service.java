@@ -17,7 +17,7 @@ public class Service {
             return  null;
         }
     }
-    public boolean UserAd(Session session,UserDao userDao,User user){
+    public boolean UserAdd(Session session,UserDao userDao,User user){
         if (userDao.searchUser(session,user.getUserName())){
             return false;
         }else {
