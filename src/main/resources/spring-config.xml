@@ -2,10 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/context/spring-tx.xsd
 ">
     <!--1.配置注解要扫描的基础包-->
     <!-- <context:component-scan base-package="hb.rj.dao"/>-->
@@ -14,7 +17,7 @@
     <!--3.配置数据库信息 原本Hibernate.cfg.xml文件中的内容-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="${jdbc.driverClass}"/>
-        <property name="jdbcUrl" value="${jdbc.jdbcUrl}" />
+        <property name="jdbcUrl" value="${jdbc.jdbcUrl}"/>
         <property name="user" value="${jdbc.user}"/>
         <property name="password" value="${jdbc.password}"/>
     </bean>
@@ -29,11 +32,12 @@
                 <prop key="hibernate.dialect">
                     org.hibernate.dialect.MySQL8Dialect
                 </prop>
-                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
                 <prop
-                        key="hibernate.current_session_context_class">thread</prop>
+                        key="hibernate.current_session_context_class">thread
+                </prop>
             </props>
         </property>
         <!-- 扫描路径 -->
@@ -43,19 +47,23 @@
             </list>
         </property>
     </bean>
-    <bean id="user" class="hb.rj.pojo.User" scope="prototype"/>
-    <bean id="userDao" class="hb.rj.dao.UserDao">
-        <property name="sessionFactory" ref="sessionFactory"/>
+    <bean id="user" class="hb.rj.pojo.User" scope="prototype" />
+    <!--配置UserDao-->
+    <bean id="userDao" class="hb.rj.dao.UserDao" scope="prototype">
+        <property name="sessionFactory" ref="sessionFactory" />
     </bean>
-    <bean id="service" class="hb.rj.service.Service" scope="prototype"/>
-    <bean id="loginAction" class="hb.rj.action.LoginAction" scope="prototype">
-        <property name="userDao" ref="userDao"/>
-        <property name="service" ref="service"/>
+    <!--配置Service-->
+    <bean id="service" class="hb.rj.service.Service" scope="prototype" />
+    <!--配置Action-->
+    <!--配置登录请求-->
+    <bean id="loginAction" class="hb.rj.action.LoginAction" scope="prototype" >
+        <property name="userDao" ref="userDao" />
+        <property name="service" ref="service" />
     </bean>
-
-    <bean id="listAction" class="hb.rj.action.ListAction">
-        <property name="userDao" ref="userDao"/>
-        <property name="service" ref="service"/>
+    <!--List请求显示用户列表-->
+    <bean id="listAction" class="hb.rj.action.ListAction" scope="prototype">
+        <property name="userDao" ref="userDao" />
+        <property name="service" ref="service" />
     </bean>
     <!--addAction请求，用来打开Add.jsp页面-->
     <bean id="addAction" class="hb.rj.action.AddAction" scope="prototype"/>
@@ -65,23 +73,21 @@
         <property name="userDao" ref="userDao"/>
         <property name="service" ref="service"/>
     </bean>
-
     <!--modifyByIdAction请求(打开修改用户页面使用的请求)-->
     <bean id="modifyByIdAction" class="hb.rj.action.ModifyByIdAction" scope="prototype">
         <property name="user" ref="user" />
         <property name="userDao" ref="userDao"/>
     </bean>
-    <bean id="modifyUserAction" class="hb.rj.action.ModifyUserAction">
-        <property name="user" ref="user" />
+    <!--modifyUserAction(修改数据库中的用户信息)-->
+    <bean id="modifyUserAction" class="hb.rj.action.ModifyUserAction" scope="prototype">
+        <property name="user" ref="user"/>
         <property name="userDao" ref="userDao"/>
     </bean>
-    <bean id="deleteByIdAction" class="hb.rj.action.DeleteByIdAction">
-
+    <!--deleteByIdAction请求(删除指定id的用户)-->
+    <bean id="deleteByIdAction" class="hb.rj.action.DeleteByIdAction" scope="prototype">
+        <property name="user" ref="user"/>
+        <property name="userDao" ref="userDao"/>
     </bean>
-
-    <bean id="logOutAction" class="hb.rj.action.LogOutAction">
-
-
-
-    </bean>
+    <!--logOut 退出系统-->
+    <bean id="logOutAction" class="hb.rj.action.LogOutAction" scope="prototype" />
 </beans>

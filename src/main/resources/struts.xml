@@ -12,7 +12,6 @@
         </action>
         <action name="list" class="listAction">
             <result name="success">list.jsp</result>
-<!--            <result name="error">Err1.jsp</result>-->
         </action>
         <action name="add" class="addAction">
             <result name="success">Add.jsp</result>
@@ -23,20 +22,22 @@
                 <param name="CurrentPage">${pageNum}</param><!--请求中的参数 最后一页-->
             </result>
         </action>
-
         <action name="modifyById" class="modifyByIdAction">
             <result name="success">Modify.jsp</result>
         </action>
         <action name="modifyUser" class="modifyUserAction">
-
-        </action>
-        <action name="deleteById" class="deleteByIdAction">
-            <result name ="success" type="redirect">
+            <result name="success" type="redirect"> <!--重定向-->
                 <param name="location">list.action</param>
                 <param name="CurrentPage">${pageNum}</param>
             </result>
         </action>
-        <action name="logOut" class="logOutAction">
+        <action name="deleteById" class="deleteByIdAction">
+            <result name="success" type="redirect">
+                <param name="location">list.action</param>
+                <param name="CurrentPage">${pageNum}</param>
+            </result>
+        </action>
+        <action name="logOut" class="logOutAction" >
             <result name="success">index.jsp</result>
         </action>
     </package>

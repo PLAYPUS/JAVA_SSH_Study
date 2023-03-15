@@ -93,8 +93,8 @@ User: szkj
                                  <td>${user.createDate}</td>
                                  <td>${user.remark}</td>
                                  <td>
-                                      <a  href="/deleteById.action?id=${user.id}">删除</a>
-                                      <a  href="/modifyById.action?id=${user.id}">修改</a>
+                                      <a  href="deleteById.action?id=${user.id}">删除</a>
+                                      <a  href="modifyById.action?id=${user.id}">修改</a>
                                  </td>
                          </tr>
                       </c:forEach>

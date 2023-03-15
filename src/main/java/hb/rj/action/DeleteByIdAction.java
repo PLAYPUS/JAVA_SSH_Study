@@ -15,6 +15,7 @@ public class DeleteByIdAction extends ActionSupport implements ModelDriven<User>
     private UserDao userDao;
     private int pageNum;
 
+
     public User getUser() {
         return user;
     }
@@ -47,17 +48,13 @@ public class DeleteByIdAction extends ActionSupport implements ModelDriven<User>
     @Override
     public String execute() throws Exception {
         //获取request对象
-        HttpServletRequest request = ServletActionContext.getRequest();
-
-        Session session = userDao.getSessionFactory().openSession();
-        userDao.deleteUser(session, user.getId()); //删除指定id的用户
-
-        Page page = (Page) request.getSession().getAttribute("page");
-        page.pageCount(session, page.getPageRows());//重新计算总页数
-        pageNum = page.getPageNum(); //获取删除记录所在的页号
+        HttpServletRequest request= ServletActionContext.getRequest();
+        Session session=userDao.getSessionFactory().openSession();
+        userDao.deleteUser(session,user.getId());//删除指定id的用户
+        Page page=(Page) request.getSession().getAttribute("page");
+        page.pageCount(session,page.getPageRows());//重新计算总页数
+        pageNum=page.getPageNum();//获取删除记录所在页号
         session.close();
         return SUCCESS;
     }
-
-
 }

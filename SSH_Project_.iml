@@ -121,5 +121,6 @@
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" name="standard" level="project" />
+    <orderEntry type="library" name="servlet-api" level="project" />
   </component>
 </module>

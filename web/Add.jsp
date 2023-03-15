@@ -63,7 +63,7 @@
         $("form").submit(function () {
             return false
         })
-        location.href="/list"  //转到列表页
+        location.href="list.action"  //转到列表页
     })
     //取消form提交
     function cancelPost() {
@@ -101,7 +101,7 @@
     })
      $("#button3").click(function () {
          cancelPost();
-         location.href = "/logOut"
+         location.href = "logOut.action"
      })
 </script>
 </html>
