@@ -31,7 +31,7 @@
         %>
        <div style="width:50%; margin-left: 25%;margin-top: 5%">
               <h3>新增用户</h3>
-              <form  method="post"  action="/add">
+              <form  method="post"  action="add.action">
                    <label>用户名称：</label>
                    <input class="form-control" type="text" id="userName" name="name">
                    <label>密码：</label>
@@ -63,7 +63,7 @@
         $("form").submit(function () {
             return false
         })
-        location.href="/list"  //转到列表页
+        location.href="list.jsp"  //转到列表页
     })
     //取消form提交
     function cancelPost() {
