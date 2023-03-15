@@ -21,8 +21,14 @@
             </result>
         </action>
 
-        <action name="modifyById" class="modfiybyIdAction">
+        <action name="modifyById" class="modifyByIdAction">
             <result name="success">Modify.action</result>
+        </action>
+        <action name="modifyUser" class="hb.rj.action.modifyUserAction">
+
+        </action>
+        <action name="deleteById" class="deleteByIdAction">
+            <result name="success"></result>
 
         </action>
     </package>

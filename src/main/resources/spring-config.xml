@@ -60,7 +60,11 @@
     <bean id="addAction" class="hb.rj.action.AddAction"></bean>
 
 
-    <bean id="modifyIdAction" class="hb.rj.action.ModifyByIdAction">
+    <bean id="modifyByIdAction" class="hb.rj.action.ModifyByIdAction">
+            <property name="user" ref="user"></property>
+            <property name="userDao" ref="userDao"></property>
+    </bean>
+    <bean id="deleteByIdAction" class="hb.rj.action.DeleteByIdAction">
 
     </bean>
 </beans>
